@@ -1,8 +1,7 @@
 defmodule Melf.Spells.Spell do
   use Melf.Schema
 
-  alias Melf.Spells.{School}
-  alias Melf.General.{Class, Damage, DifficultyClass, SubClass}
+  alias Melf.General.{Damage, DifficultyClass, Type}
 
   schema "spells" do
     field :index, :string
@@ -18,8 +17,8 @@ defmodule Melf.Spells.Spell do
 
     embeds_one :damage, Damage
     embeds_one :dc, DifficultyClass
-    embeds_one :school, School
-    embeds_many :classes, Class
-    embeds_many :sub_classes, SubClass
+    embeds_one :school, Melf.General.Type
+    embeds_many :classes, Melf.General.Type
+    embeds_many :sub_classes, Melf.General.Type
   end
 end

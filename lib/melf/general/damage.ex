@@ -1,15 +1,19 @@
 defmodule Melf.General.Damage do
   use Melf.Schema
 
-  schema "damage" do
-    embeds_one :damage_type, Melf.General.DamageType do
-      field :index, :string
-      field :name, :string
-    end
+  defmodule DamageAtCharacterLevel do
+    use Melf.Schema
 
-    embeds_one :damage_at_character_level, Melf.General.DamageAtCharacterLevel do
+    schema "damage_at_character_level" do
       field :"1", :string
       field :"5", :string
+      field :"11", :string
+      field :"17", :string
     end
+  end
+
+  schema "damage" do
+    embeds_one :damage_type, Melf.General.Type
+    embeds_one :damage_at_character_level, DamageAtCharacterLevel
   end
 end

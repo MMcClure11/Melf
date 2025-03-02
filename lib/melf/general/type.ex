@@ -1,7 +1,7 @@
-defmodule Melf.Spells.School do
+defmodule Melf.General.Type do
   use Melf.Schema
 
-  schema "school" do
+  schema "type" do
     field :index, :string
     field :name, :string
   end
