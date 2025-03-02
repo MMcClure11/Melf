@@ -18,6 +18,7 @@ defmodule MelfWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/spells", SpellsLive, :spells
   end
 
   # Other scopes may use custom stacks.
