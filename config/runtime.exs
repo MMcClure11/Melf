@@ -20,6 +20,8 @@ if System.get_env("PHX_SERVER") do
   config :melf, MelfWeb.Endpoint, server: true
 end
 
+config :langchain, :anthropic_key, System.fetch_env!("ANTHROPIC_API_KEY")
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||

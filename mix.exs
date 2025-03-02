@@ -55,7 +55,8 @@ defmodule Melf.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:mongodb_ecto, path: "~/Code/mongodb_ecto"}
+      {:mongodb_ecto, path: "~/Code/mongodb_ecto"},
+      {:langchain, "~> 0.3.0"}
     ]
   end
 
