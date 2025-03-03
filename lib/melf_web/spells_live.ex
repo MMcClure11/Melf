@@ -73,7 +73,7 @@ defmodule MelfWeb.SpellsLive do
           <%= for {message, i} <- Enum.with_index(@messages) do %>
             <div id={"message-#{i}"} class={message_container_class(message.role)}>
               <div class={message_class(message.role)}>
-                <%= raw(format_message(message.content)) %>
+                {raw(format_message(message.content))}
               </div>
             </div>
           <% end %>
@@ -126,6 +126,7 @@ defmodule MelfWeb.SpellsLive do
   defp format_message(content) do
     content
     |> String.replace("\n", "")
+
     # Add more formatting if needed for markdown, etc.
   end
 end

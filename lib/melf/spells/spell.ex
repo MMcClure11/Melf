@@ -17,8 +17,9 @@ defmodule Melf.Spells.Spell do
 
     embeds_one :damage, Damage
     embeds_one :dc, DifficultyClass
-    embeds_one :school, Melf.General.Type
-    embeds_many :classes, Melf.General.Type
-    embeds_many :sub_classes, Melf.General.Type
+    embeds_one :school, Type
+
+    embeds_many :classes, Type
+    embeds_many :sub_classes, Type
   end
 end
